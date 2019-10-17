@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Firebase;
 using Firebase.Unity.Editor;
 using Firebase.Auth;
@@ -20,6 +21,8 @@ using Firebase.Storage;
 public class Login : MonoBehaviour
 {
     // Start is called before the first frame update
+    public InputField login;
+    public InputField password;
     void Start()
     { 
         
@@ -42,10 +45,19 @@ public class Login : MonoBehaviour
 
                DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
             });
+        
+            
+            
 
 
     }
 
+    public void ButtonLogin()
+    {
+        string login = this.login.text;
+        string password = this.password.text;
+        Debug.Log(name);
+    }
     // Update is called once per frame
     void Update()
     {
